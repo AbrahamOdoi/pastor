@@ -19,31 +19,7 @@
 			</div><!-- /header -->
 
 			<div data-role="content">
-				<div id="regis" style=" display:none; position: fixed; top: 50px; text-align: center; width: 80%; padding: 10px; z-index: 9999;
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ebf1f6+0,abd3ee+50,89c3eb+51,d5ebfb+100;Blue+Gloss+%234 */
-				background: #ebf1f6; /* Old browsers */
-				background: -moz-linear-gradient(top,  #ebf1f6 0%, #abd3ee 50%, #89c3eb 51%, #d5ebfb 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb)); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* Opera 11.10+ */
-				background: -ms-linear-gradient(top,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* IE10+ */
-				background: linear-gradient(to bottom,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%); /* W3C */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', endColorstr='#d5ebfb',GradientType=0 ); /* IE6-9 */
 
-				">
-					<form>
-						<label style="font-weight: bolder;">Introduce Yourself</label>
-						<br />
-						<label for="urname">Fullname</label>
-						<input id="urname" type="text" name="urname"  />
-						<label for="urnum">Mobile number</label>
-						<input id="urnum" type="text" name="urnum"  />
-						<label for="ururloc">Location</label>
-						<input id="urloc" type="text" name="urloc"  />
-						<input id="savedet" type="button" value="SEND" />
-					</form>
-
-				</div>
 				<div style="padding: 2px;background-color: #202020 ;font-family: serif; text-align: center;margin-top: -20px;margin-right: -20px; margin-left: -20px;">
 					<h2 style="color: lime;"> Voice Of Possibilty <h4 style="color:orange">Where Christ makes everybody a possibility</h4>
 				</div>
@@ -204,7 +180,7 @@
 
 			<div data-role="content">
 				<div id="read">
-				  
+
 				</div>
 				<!-- <ul data-role="listview" data-filter="true" data-input="#filterBasic-input"  id="read"></ul> -->
 			</div><!-- /content -->
@@ -223,7 +199,7 @@
 				<div id="prayer" style="min-height:100%;  padding: 5px;background-color: #EDFFFF ;font-family: serif; text-align: justify; "></div>
 
 				<div style="background: #F8F8F8; padding: 10px; text-align: center;" data-role="popup" id="viewsdiv" class="modalDialog">
-					
+
 				</div>
 			</div><!-- /content -->
 
@@ -248,18 +224,18 @@
 			<div data-role="footer" data-position="fixed"></div>
 
 		</div><!-- /page6 -->
-		<script>
-			$("#savedet").click(function() {
-				var name = $("#urname").val();
-				var num = $("#urnum").val();
-				var loc = $("#urloc").val();
-				localStorage.setItem("yourname", name);
-				localStorage.setItem("yournum", num);
-				localStorage.setItem("yourloc", loc);
-				$("#regis").slideUp('fast');
-			});
+		<!-- <script>
+		$("#savedet").click(function() {
+		var name = $("#urname").val();
+		var num = $("#urnum").val();
+		var loc = $("#urloc").val();
+		localStorage.setItem("yourname", name);
+		localStorage.setItem("yournum", num);
+		localStorage.setItem("yourloc", loc);
+		$("#regis").slideUp('fast');
+		});
 
-		</script>
+		</script> -->
 		<script>
 			var number = localStorage.getItem("yournum");
 			if (number == null) {
@@ -351,37 +327,37 @@
 			});
 
 		</script>
-		<script>
-			$("#amen").click(function() {
-				var views = $("#view").val();
-				var name = localStorage.getItem("yourname", name);
-				var num = localStorage.getItem("yournum", num);
-				var loc = localStorage.getItem("yourloc", loc);
+		<!-- <script>
+		$("#amen").click(function() {
+		var views = $("#view").val();
+		var name = localStorage.getItem("yourname", name);
+		var num = localStorage.getItem("yournum", num);
+		var loc = localStorage.getItem("yourloc", loc);
 
-				var $inspire = $("#inspire").val();
-				if (views == '') {
-					alert("Kindly share your views on the passage");
-					return false;
-				};
-				
-				$.post('http://sms.nalosolutions.com/nalosms/views.php', {
-					view : $("#view").val(),
-					name : name,
-					num : num,
-					loc : loc,
-					inspiration : $("#inspire").val()
-				}, function(data, status) {
-					if (status == 'success') {
-						alert(data);
-						$("#viewsdiv").slideDown();
-					} else {
-						alert("Check your internet connectivity");
-					};
+		var $inspire = $("#inspire").val();
+		if (views == '') {
+		alert("Kindly share your views on the passage");
+		return false;
+		};
 
-				});
+		$.post('http://sms.nalosolutions.com/nalosms/views.php', {
+		view : $("#view").val(),
+		name : name,
+		num : num,
+		loc : loc,
+		inspiration : $("#inspire").val()
+		}, function(data, status) {
+		if (status == 'success') {
+		alert(data);
+		$("#viewsdiv").slideDown();
+		} else {
+		alert("Check your internet connectivity");
+		};
 
-			});
-		</script>
+		});
+
+		});
+		</script> -->
 		<script>
 			$.get('http://sms.nalosolutions.com/nalosms/archive.php', function(data, status) {
 				if (status == 'success') {
@@ -422,7 +398,6 @@
 
 			});
 		</script>
-		
-		
+
 	</body>
 </html>
